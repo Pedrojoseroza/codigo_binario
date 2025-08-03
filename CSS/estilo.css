@@ -1,0 +1,54 @@
+html {
+    margin: 3vw 0.5vw 20px 0.5vw;
+    background-color: #fffad3;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: calc(12px + 0.390625vw);
+}
+
+body header nav ul li p a {
+    text-decoration: none;
+    justify-content: right;
+    margin: 20px 20px 20px 20px;
+    display: flex;
+}
+
+body h1 {
+    color: #7e638c;
+    display: flex;
+    font-size: 2.5vw;
+    padding: 10px 10px 10px 10px;
+    font-weight: bold;
+}
+
+body main p label {
+    font-size: 2vw;
+    color: #7e638c;
+    padding: 10px 10px 10px 10px;
+
+}
+
+body main input.message {
+    width: 45rem;
+    height: 10rem;
+    color: #d6496c;
+    background-color: #d6dd90;
+    padding: 0px 0.5vw 0px 0.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body main p input.button {
+    justify-content: center;
+}
+footer div {
+    text-align: center;
+    background-color: #00FF7F;
+    width: 50%;
+    height: 20px;
+    border-radius: 10px;
+    display: flex;
+      justify-content: center;
+      width: 500px; /* ou qualquer largura desejada */
+      margin: 0 auto;
+}

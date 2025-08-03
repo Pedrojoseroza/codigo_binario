@@ -1,19 +1,20 @@
-let texto1 = document.getElementById('#mensagem');
-let texto = texto1.value;
-let resultado1 = document.querySelector('#resultado');
-let resultado = resultado1.value;
-let binario = document.getElementById('#butao');
-binario.addEventListener("click", function(e) {
-    e.preventDefault();
+
+
+
+let binario = document.getElementById('butao');
+let obj = document.getElementById(String("mensagem"));
+let texto = obj.value;
+binario.addEventListener("click", function () {
+    binary(obj.value);
     console.log(texto);
-});
-/*function binary(text) {
+})
+function binary(text) {
     let letra = ""
     let numero = 0;
     let mensagemValida = true;
     let exibiçãoFinal = "";
-    text = texto.split("");
-    for (let i = 0; i < texto.length; i++) {
+    text = text.split("");
+    for (let i = 0; i < text.length; i++) {
         letra = text[i];
         switch (letra) {
             case " ":
@@ -23,6 +24,9 @@ binario.addEventListener("click", function(e) {
                 numero = 44;
                 break;
             case "A":
+            case "Á":
+            case "Ã":
+            case "Â":
                 numero = 65;
                 break;
             case "B":
@@ -65,6 +69,8 @@ binario.addEventListener("click", function(e) {
                 numero = 78;
                 break;
             case "O":
+            case "Ô":
+            case "Õ":
                 numero = 79;
                 break;
             case "P":
@@ -100,8 +106,9 @@ binario.addEventListener("click", function(e) {
             case "Z":
                 numero = 90;
                 break;
-
             case "a":
+            case "á":
+            case "ã":
                 numero = 97;
                 break;
             case "b":
@@ -144,6 +151,9 @@ binario.addEventListener("click", function(e) {
                 numero = 110;
                 break;
             case "o":
+            case "ó":
+            case "õ":
+            case "ô":
                 numero = 111;
                 break;
             case "p":
@@ -191,12 +201,15 @@ binario.addEventListener("click", function(e) {
                 binario = Math.floor(binario / 2);
             }
             binarioExibido += binario;
+            while (binarioExibido.length < 8) {
+                binarioExibido += "0";
+            }
             binarioExibido = binarioExibido.split("").reverse().join("");
-            binarioExibido += " ";
+            exibiçãoFinal += binarioExibido;
+            exibiçãoFinal += " "
         } else {
-            binarioExibido = "INFORME SOMENTE NÚMEROS VÁLIDOS!!!"
+            exibiçãoFinal = "INFORME SOMENTE CARACTERES VÁLIDOS!!!"
         }
-        exibiçãoFinal += binarioExibido;
     }
     resultado.textContent = exibiçãoFinal;
-}*/
+}
