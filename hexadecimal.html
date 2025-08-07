@@ -5,16 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hexadecimal</title>
     <link rel="stylesheet" href="CSS/estilo.css">
+    <link rel="stylesheet" href="CSS/reset.css">
 </head>
 <body>
+        <header>
+        <nav>
+            <ul>
+                <li>
+                    <p><a href="index.html">Binário</a></p>
+                </li>
+                <li>
+                    <p><a href="hexadecimal.html">Hexadecimal</a></p>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
     <h1> Bem-vindo a nossa página que traduz qualquer número em hexadecimal! </h1>
-<label for = "num"> Digite abaixo seu número: </label>
-<input type = "Number" name = "num" id = "hexadecimal">
+    <label for = "hexadecimal"> Digite abaixo seu número: </label>
+<input type = "Number" name = "num" id = "hexadecimal" class="hexadecimal">
 <br>
-<p id = "result">
-</p>
-<footer>
+<textarea name="" id="resultadoHexa"></textarea>
+
+<input type="button" value = "Traduzir" id = "traduzir" class="button">
+</main>
+<footer> 
+<div>
 <p> Desenvolvido por Pedro J. O. da Roza
+</div>
 </footer>
 </body>
+    <script type="text/Javascript" src="Javascript/hexascript.js" defer></script>
 </html>

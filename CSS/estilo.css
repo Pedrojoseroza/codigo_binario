@@ -20,7 +20,7 @@ body h1 {
     font-weight: bold;
 }
 
-body main p label {
+body main label {
     font-size: 2vw;
     color: #7e638c;
     padding: 10px 10px 10px 10px;
@@ -28,7 +28,7 @@ body main p label {
 }
 
 body main input.message {
-    width: 45rem;
+    width: 50%;
     height: 10rem;
     color: #d6496c;
     background-color: #d6dd90;
@@ -36,12 +36,33 @@ body main input.message {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 10px 0 10px 30px;
+    font-size: larger;
 }
-
-body main p input.button {
+body main textarea.solutionBi {
+    display: flex;
+     width: 50%;
+    height: 10rem;
+    color: #d6496c;
+    background-color: #d6dd90;
+    padding: 0px 0.5vw 0px 0.5vw;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    margin: 0 0 10px 30px;
+    font-size: larger;
 }
-footer div {
+body main  input.button {
+    text-align: center;
+    background-color: red;
+    display: block;
+    margin: 0 auto;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px ;
+    
+}
+footer div p {
+    
     text-align: center;
     background-color: #00FF7F;
     width: 50%;
@@ -51,4 +72,34 @@ footer div {
       justify-content: center;
       width: 500px; /* ou qualquer largura desejada */
       margin: 0 auto;
+}
+/*======================================
+            HEXADECIMAL
+========================================
+*/
+body main input.hexadecimal {
+     width: 50%;
+    height: 10rem;
+    color: #d6496c;
+    background-color: #d6dd90;
+    padding: 0px 0.5vw 0px 0.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0 10px 30px;
+    font-size: xx-large;
+}
+
+body main textarea {
+    display: flex;
+     width: 50%;
+    height: 10rem;
+    color: #d6496c;
+    background-color: #d6dd90;
+    padding: 0px 0.5vw 0px 0.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 10px 30px;
+    font-size: xx-large;
 }

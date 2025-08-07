@@ -2,11 +2,10 @@
 
 
 let binario = document.getElementById('butao');
-let obj = document.getElementById(String("mensagem"));
+let obj = document.getElementById(("mensagem"));
 let texto = obj.value;
 binario.addEventListener("click", function () {
     binary(obj.value);
-    console.log(texto);
 })
 function binary(text) {
     let letra = ""
@@ -22,6 +21,36 @@ function binary(text) {
                 break;
             case ",":
                 numero = 44;
+                break;
+            case 0:
+                numero = 48;
+                break;
+            case 1:
+                numero = 49;
+                break;
+            case 2:
+                numero = 50;
+                break;
+            case 3:
+                numero = 51;
+                break;
+            case 4: 
+                numero = 52;
+                break;
+            case 5:
+                numero = 53;
+                break;
+            case 6:
+                numero = 54;
+                break;
+            case 7:
+                numero = 55;
+                break;
+            case 8:
+                numero = 56;
+                break;
+            case 9:
+                numero = 57;
                 break;
             case "A":
             case "Á":
@@ -39,6 +68,8 @@ function binary(text) {
                 numero = 68;
                 break;
             case "E":
+            case "Ê":
+            case "É":
                 numero = 69;
                 break;
             case "F":
@@ -121,6 +152,8 @@ function binary(text) {
                 numero = 100;
                 break;
             case "e":
+            case "é":
+            case "ê":
                 numero = 101;
                 break;
             case "f":
@@ -213,3 +246,4 @@ function binary(text) {
     }
     resultado.textContent = exibiçãoFinal;
 }
+
