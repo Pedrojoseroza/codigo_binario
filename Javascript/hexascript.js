@@ -8,7 +8,7 @@ traducao.addEventListener("click", function() {
     let hexaNum = document.getElementById('hexadecimal');
     console.log(Number(hexaNum.value));
     brazil(Number(hexaNum.value));
-})
+  })
 function brazil(num) {
     let hexaExibido = ``;
     let hexadecimal = num;
