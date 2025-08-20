@@ -3,16 +3,16 @@
 
 let binario = document.getElementById('butao');
 let obj = document.getElementById(("mensagem"));
-binario.addEventListener("click", function () {
 
+binario.addEventListener("click", function () { 
+    binary(obj.value);
+    
+})
+let texto = document.getElementById('butao2');
+texto.addEventListener("click", function() {
     let result = document.getElementById('resultado').value;
-    if (obj.value !== "") {
-        binary(obj.value);
-    } else {
-        console.log("Deu certo!!")
-        reverseBinary(result);
-    obj.value.textContent = conteudo;
-    }
+    reverseBinary(result);
+    console.log("calma...");
 })
 function binary(text) {
     let letra = ""
@@ -41,7 +41,7 @@ function binary(text) {
             case 3:
                 numero = 51;
                 break;
-            case 4: 
+            case 4:
                 numero = 52;
                 break;
             case 5:
@@ -212,7 +212,7 @@ function binary(text) {
                 numero = 116;
                 break;
             case "u":
-               numero = 117;
+                numero = 117;
                 break;
             case "v":
                 numero = 118;
@@ -254,10 +254,12 @@ function binary(text) {
     resultado.textContent = exibiçãoFinal;
 }
 function reverseBinary(codigo) {
-     codigo = codigo.split(" ");
+    codigo = codigo.split(" ");
+    if (codigo[codigo.length-1] === ""){
+    codigo.splice(-1, 1);
+    }
     let num = 0;
     let conteudo = "";
-    let character = "";
     for (let p = 0; p < codigo.length; p++) {
         let element = codigo[p];
         element = element.split("");
@@ -266,224 +268,218 @@ function reverseBinary(codigo) {
             for (let q = 0; q < element.length; q++) {
                 switch (element[q]) {
                     case "0":
-                         num *= 2;    
+                        num *= 2;
                         break;
-                    case "1": 
-                        num = (num*2) + 1 ; 
+                    case "1":
+                        num = (num * 2) + 1;
                         break;
                     default:
-                    conteudo = "Infromer valores válidos!!!"
+                        conteudo = "Infromer valores válidos!!!"
                         break;
                 }
             }
             switch (num) {
-            case 32:
-                conteudo += " ";
-                break;
-            case 44:
-                conteudo += ",";
-                break;
-            case 48:
-                conteudo += "0";
-                break;
-            case 49:
-                conteudo += "1";
-                break;
-            case 50:
-                conteudo += "2";
-                break;
-            case 51:
-                conteudo += "3";
-                break;
-            case 52: 
-                conteudo += "4";
-                break;
-            case 53:
-                conteudo += "5";
-                break;
-            case 54:
-                conteudo += "6";
-                break;
-            case 55:
-                conteudo += "7";
-                break;
-            case 56:
-                conteudo += "8";
-                break;
-            case 57: 
-                conteudo += "9";
-                break;
-            case 65:
-                conteudo += "A";
-                break;
-            case 66:
-                conteudo += "B";
-                break;
-            case 67:
-                conteudo += "C";
-                break;
-            case 68:
-                conteudo += "D";
-                break;
-            case 69:
-                conteudo += "E";
-                break;
-            case 70:
-                conteudo += "F";
-                break;
-            case 71:
-                conteudo += "G";
-                break;
-            case 72:
-                conteudo += "H";
-                break;
-            case 73:
-                conteudo += "I";
-                break;
-            case 74:
-                conteudo += "J";
-                break;
-            case 75:
-                conteudo += "K";
-                break;
-            case 76:
-                conteudo += "L";
-                break;
-            case 77:
-                conteudo += "M";
-                break;
-            case 78:
-                conteudo += "N";
-                break;
-            case 79:
-                conteudo += "O";
-                break;
-            case 80:
-                conteudo += "P";
-                break;
-            case 81:
-                conteudo += "Q";
-                break;
-            case 82:
-                conteudo += "R";
-                break;
-            case 83:
-                conteudo += "S";
-                break;
-            case 84:
-                conteudo += "T";
-                break;
-            case 85:
-                conteudo += "U";
-                break;
-            case 86:
-                conteudo += "V";
-                break;
-            case 87:
-                conteudo += "W";
-                break;
-            case 88:
-                conteudo += "X";
-                break;
-            case 89:
-                conteudo += "Y";
-                break;
-            case 90:
-                conteudo += "Z";
-                break;
-            case "a":
-            case "á":
-            case "ã":
-                conteudo = 97;
-                break;
-            case "b":
-                conteudo = 98;
-                break;
-            case "c":
-                conteudo = 99;
-                break;
-            case "d":
-                conteudo = 100;
-                break;
-            case "e":
-            case "é":
-            case "ê":
-                conteudo = 101;
-                break;
-            case "f":
-                conteudo = 102;
-                break;
-            case "g":
-                conteudo = 103;
-                break;
-            case "h":
-                conteudo = 104;
-                break;
-            case "i":
-                conteudo = 105;
-                break;
-            case "j":
-                conteudo = 106;
-                break;
-            case "k":
-                conteudo = 107;
-                break;
-            case "l":
-                conteudo = 108;
-                break;
-            case "m":
-                conteudo = 109;
-                break;
-            case "n":
-                conteudo = 110;
-                break;
-            case "o":
-            case "ó":
-            case "õ":
-            case "ô":
-                conteudo = 111;
-                break;
-            case "p":
-                conteudo = 112;
-                break;
-            case "q":
-                conteudo = 113;
-                break;
-            case "r":
-                conteudo = 114;
-                break;
-            case "s":
-                conteudo = 115;
-                break;
-            case "t":
-                conteudo = 116;
-                break;
-            case "u":
-                conteudo = 117;
-                break;
-            case "v":
-                conteudo = 118;
-                break;
-            case "w":
-                conteudo = 119;
-                break;
-            case "x":
-                conteudo = 120;
-                break;
-            case "y":
-                conteudo = 121;
-                break;
-            case "z":
-                conteudo = 122;
-                break;
-            default:
-                mensagemValida = false;
-                break;
-        }
+                case 32:
+                    conteudo += " ";
+                    break;
+                case 44:
+                    conteudo += ",";
+                    break;
+                case 48:
+                    conteudo += "0";
+                    break;
+                case 49:
+                    conteudo += "1";
+                    break;
+                case 50:
+                    conteudo += "2";
+                    break;
+                case 51:
+                    conteudo += "3";
+                    break;
+                case 52:
+                    conteudo += "4";
+                    break;
+                case 53:
+                    conteudo += "5";
+                    break;
+                case 54:
+                    conteudo += "6";
+                    break;
+                case 55:
+                    conteudo += "7";
+                    break;
+                case 56:
+                    conteudo += "8";
+                    break;
+                case 57:
+                    conteudo += "9";
+                    break;
+                case 65:
+                    conteudo += "A";
+                    break;
+                case 66:
+                    conteudo += "B";
+                    break;
+                case 67:
+                    conteudo += "C";
+                    break;
+                case 68:
+                    conteudo += "D";
+                    break;
+                case 69:
+                    conteudo += "E";
+                    break;
+                case 70:
+                    conteudo += "F";
+                    break;
+                case 71:
+                    conteudo += "G";
+                    break;
+                case 72:
+                    conteudo += "H";
+                    break;
+                case 73:
+                    conteudo += "I";
+                    break;
+                case 74:
+                    conteudo += "J";
+                    break;
+                case 75:
+                    conteudo += "K";
+                    break;
+                case 76:
+                    conteudo += "L";
+                    break;
+                case 77:
+                    conteudo += "M";
+                    break;
+                case 78:
+                    conteudo += "N";
+                    break;
+                case 79:
+                    conteudo += "O";
+                    break;
+                case 80:
+                    conteudo += "P";
+                    break;
+                case 81:
+                    conteudo += "Q";
+                    break;
+                case 82:
+                    conteudo += "R";
+                    break;
+                case 83:
+                    conteudo += "S";
+                    break;
+                case 84:
+                    conteudo += "T";
+                    break;
+                case 85:
+                    conteudo += "U";
+                    break;
+                case 86:
+                    conteudo += "V";
+                    break;
+                case 87:
+                    conteudo += "W";
+                    break;
+                case 88:
+                    conteudo += "X";
+                    break;
+                case 89:
+                    conteudo += "Y";
+                    break;
+                case 90:
+                    conteudo += "Z";
+                    break;
+                case 97:
+                    conteudo += "a";
+                    break;
+                case 98:
+                    conteudo += "b";
+                    break;
+                case 99:
+                    conteudo += "c";
+                    break;
+                case 100:
+                    conteudo += "d";
+                    break;
+                case 101:
+                    conteudo += "e";
+                    break;
+                case 102:
+                    conteudo += "f";
+                    break;
+                case 103:
+                    conteudo += "g";
+                    break;
+                case 104:
+                    conteudo += "h";
+                    break;
+                case 105:
+                    conteudo += "i";
+                    break;
+                case 106:
+                    conteudo += "j";
+                    break;
+                case 107:
+                    conteudo += "k";
+                    break;
+                case 108:
+                    conteudo += "l";
+                    break;
+                case 109:
+                    conteudo += "m";
+                    break;
+                case 110:
+                    conteudo += "n";
+                    break;
+                case 111:
+                    conteudo += "o";
+                    break;
+                case 112:
+                    conteudo += "p";
+                    break;
+                case 113:
+                    conteudo += "q";
+                    break;
+                case 114:
+                    conteudo += "r";
+                    break;
+                case 115:
+                    conteudo += "s";
+                    break;
+                case 116:
+                    conteudo += "t";
+                    break;
+                case 117:
+                    conteudo += "u";
+                    break;
+                case 118:
+                    conteudo += "v";
+                    break;
+                case 119:
+                    conteudo += "w";
+                    break;
+                case 120:
+                    conteudo += "x";
+                    break;
+                case 121:
+                    conteudo += "y";
+                    break;
+                case 122:
+                    conteudo += "z";
+                    break;
+                default:
+                    conteudo = "Infome valores válidos!!!"
+                    break;
+            }
         } else {
-            conteudo = "Infromer valores válidos!!!"
-        }   
+            conteudo = "Informe valores válidos!!!"
+        }
     }
-    texto.textContent = conteudo;
+    mensagem.textContent = conteudo;
+    obj.textContent = conteudo;
 }
 

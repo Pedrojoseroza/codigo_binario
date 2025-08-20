@@ -26,30 +26,27 @@ body main label {
     padding: 10px 10px 10px 10px;
 
 }
-
-body main input.message {
-    width: 50%;
+body main section {
+    display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+body main section textarea.message {
+    width: 30%;
     height: 10rem;
     color: #d6496c;
     background-color: #d6dd90;
     padding: 0px 0.5vw 0px 0.5vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px 0 10px 30px;
+    margin: 40px 0 40px 30px;
     font-size: larger;
 }
-body main textarea.solutionBi {
-    display: flex;
-     width: 50%;
+body main section textarea.solutionBi {
+     width: 30%;
     height: 10rem;
     color: #d6496c;
     background-color: #d6dd90;
     padding: 0px 0.5vw 0px 0.5vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 0 10px 30px;
+    margin: 40px 0 40px 30px;
     font-size: larger;
 }
 body main  input.button {
@@ -58,20 +55,22 @@ body main  input.button {
     display: block;
     margin: 0 auto;
     padding: 10px 10px 10px 10px;
-    border-radius: 10px ;
+    border-radius: 10px;
     
 }
+footer div {
+    display: flex;
+    align-items: center;  
+    justify-content: center;
+}
 footer div p {
-    
     text-align: center;
     background-color: #00FF7F;
-    width: 50%;
-    height: 20px;
+    height: 3rem;
     border-radius: 10px;
-    display: flex;
-      justify-content: center;
-      width: 500px; /* ou qualquer largura desejada */
-      margin: 0 auto;
+      width: 10rem; 
+      margin: 20px;
+
 }
 /*======================================
             HEXADECIMAL
