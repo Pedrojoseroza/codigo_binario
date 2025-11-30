@@ -2,26 +2,27 @@
 
 
 let binario = document.getElementById('butao');
-let obj = document.getElementById(("mensagem"));
+let texto = document.getElementById('butao2');
 
+let text = document.getElementById(("texto"));
 binario.addEventListener("click", function () { 
-    binary(obj.value);
+    text = document.getElementById(("texto"));    
+    changeToBinary(text.value);
     
 })
-let texto = document.getElementById('butao2');
+let binary = document.getElementById('binario');
+
 texto.addEventListener("click", function() {
-    let result = document.getElementById('resultado').value;
-    reverseBinary(result);
-    console.log("calma...");
+    binary = document.getElementById('binario');
+    reverseBinary(binary.value);
 })
-function binary(text) {
-    let letra = ""
-    let numero = 0;
+function changeToBinary(message) {
+    message = message.split("");
     let mensagemValida = true;
-    let exibiçãoFinal = "";
-    text = text.split("");
-    for (let i = 0; i < text.length; i++) {
-        letra = text[i];
+    let exibeBinario = "";
+    for (const letra of message) {
+        let arrayBinario = [];
+        let numero = 0;
         switch (letra) {
             case " ":
                 numero = 32;
@@ -233,253 +234,249 @@ function binary(text) {
                 mensagemValida = false;
                 break;
         }
-        if (mensagemValida) {
-            let binarioExibido = "";
-            let binario = numero;
-            while (binario > 1) {
-                binarioExibido += binario % 2;
-                binario = Math.floor(binario / 2);
+        while (numero >= 1) {
+            if (numero % 2 == 0) {
+                arrayBinario.unshift("0");
+            } else {
+                arrayBinario.unshift("1");
             }
-            binarioExibido += binario;
-            while (binarioExibido.length < 8) {
-                binarioExibido += "0";
-            }
-            binarioExibido = binarioExibido.split("").reverse().join("");
-            exibiçãoFinal += binarioExibido;
-            exibiçãoFinal += " "
-        } else {
-            exibiçãoFinal = "INFORME SOMENTE CARACTERES VÁLIDOS!!!"
+            numero = Math.floor(numero / 2);
+            //Atribui ao contrário nos caracteres
         }
+        while (arrayBinario.length % 8 !== 0) {
+            arrayBinario.unshift("0");
+        }
+        exibeBinario += arrayBinario.join("");
+        exibeBinario += " ";
     }
-    resultado.textContent = exibiçãoFinal;
+    if (mensagemValida) {
+        text.value = ""
+        binary.value = exibeBinario;
+    } else {
+        binary.innerHTML = "INFORME SOMENTE CARACTERES VÁLIDOS!";
+    }
 }
 function reverseBinary(codigo) {
+    codigo = codigo.trimRight();
     codigo = codigo.split(" ");
-    if (codigo[codigo.length-1] === ""){
-    codigo.splice(-1, 1);
-    }
-    let num = 0;
-    let conteudo = "";
-    for (let p = 0; p < codigo.length; p++) {
-        let element = codigo[p];
+    let exibeTexto = "";
+    let dadoValido = true;
+    for (let element of codigo) {
+        let num = 0;
+        let palavra = "";
         element = element.split("");
-        if (element.length === 8) {
-            num = 0;
-            for (let q = 0; q < element.length; q++) {
-                switch (element[q]) {
-                    case "0":
-                        num *= 2;
-                        break;
-                    case "1":
-                        num = (num * 2) + 1;
-                        break;
-                    default:
-                        conteudo = "Infromer valores válidos!!!"
-                        break;
-                }
-            }
-            switch (num) {
-                case 32:
-                    conteudo += " ";
-                    break;
-                case 44:
-                    conteudo += ",";
-                    break;
-                case 48:
-                    conteudo += "0";
-                    break;
-                case 49:
-                    conteudo += "1";
-                    break;
-                case 50:
-                    conteudo += "2";
-                    break;
-                case 51:
-                    conteudo += "3";
-                    break;
-                case 52:
-                    conteudo += "4";
-                    break;
-                case 53:
-                    conteudo += "5";
-                    break;
-                case 54:
-                    conteudo += "6";
-                    break;
-                case 55:
-                    conteudo += "7";
-                    break;
-                case 56:
-                    conteudo += "8";
-                    break;
-                case 57:
-                    conteudo += "9";
-                    break;
-                case 65:
-                    conteudo += "A";
-                    break;
-                case 66:
-                    conteudo += "B";
-                    break;
-                case 67:
-                    conteudo += "C";
-                    break;
-                case 68:
-                    conteudo += "D";
-                    break;
-                case 69:
-                    conteudo += "E";
-                    break;
-                case 70:
-                    conteudo += "F";
-                    break;
-                case 71:
-                    conteudo += "G";
-                    break;
-                case 72:
-                    conteudo += "H";
-                    break;
-                case 73:
-                    conteudo += "I";
-                    break;
-                case 74:
-                    conteudo += "J";
-                    break;
-                case 75:
-                    conteudo += "K";
-                    break;
-                case 76:
-                    conteudo += "L";
-                    break;
-                case 77:
-                    conteudo += "M";
-                    break;
-                case 78:
-                    conteudo += "N";
-                    break;
-                case 79:
-                    conteudo += "O";
-                    break;
-                case 80:
-                    conteudo += "P";
-                    break;
-                case 81:
-                    conteudo += "Q";
-                    break;
-                case 82:
-                    conteudo += "R";
-                    break;
-                case 83:
-                    conteudo += "S";
-                    break;
-                case 84:
-                    conteudo += "T";
-                    break;
-                case 85:
-                    conteudo += "U";
-                    break;
-                case 86:
-                    conteudo += "V";
-                    break;
-                case 87:
-                    conteudo += "W";
-                    break;
-                case 88:
-                    conteudo += "X";
-                    break;
-                case 89:
-                    conteudo += "Y";
-                    break;
-                case 90:
-                    conteudo += "Z";
-                    break;
-                case 97:
-                    conteudo += "a";
-                    break;
-                case 98:
-                    conteudo += "b";
-                    break;
-                case 99:
-                    conteudo += "c";
-                    break;
-                case 100:
-                    conteudo += "d";
-                    break;
-                case 101:
-                    conteudo += "e";
-                    break;
-                case 102:
-                    conteudo += "f";
-                    break;
-                case 103:
-                    conteudo += "g";
-                    break;
-                case 104:
-                    conteudo += "h";
-                    break;
-                case 105:
-                    conteudo += "i";
-                    break;
-                case 106:
-                    conteudo += "j";
-                    break;
-                case 107:
-                    conteudo += "k";
-                    break;
-                case 108:
-                    conteudo += "l";
-                    break;
-                case 109:
-                    conteudo += "m";
-                    break;
-                case 110:
-                    conteudo += "n";
-                    break;
-                case 111:
-                    conteudo += "o";
-                    break;
-                case 112:
-                    conteudo += "p";
-                    break;
-                case 113:
-                    conteudo += "q";
-                    break;
-                case 114:
-                    conteudo += "r";
-                    break;
-                case 115:
-                    conteudo += "s";
-                    break;
-                case 116:
-                    conteudo += "t";
-                    break;
-                case 117:
-                    conteudo += "u";
-                    break;
-                case 118:
-                    conteudo += "v";
-                    break;
-                case 119:
-                    conteudo += "w";
-                    break;
-                case 120:
-                    conteudo += "x";
-                    break;
-                case 121:
-                    conteudo += "y";
-                    break;
-                case 122:
-                    conteudo += "z";
-                    break;
-                default:
-                    conteudo = "Infome valores válidos!!!"
-                    break;
-            }
-        } else {
-            conteudo = "Informe valores válidos!!!"
+        for (let 
+            numeral of element) {
+            if (numeral == 0) {
+                num *= 2;
+            } else if (numeral == 1) {
+                num = num * 2 + 1;
+            }    
         }
+        switch (num) {
+            case 32:
+                palavra += " ";
+                break;
+            case 44:
+                palavra += ",";
+                break;
+            case 48:
+                palavra += "0";
+                break;
+            case 49:
+                palavra += "1";
+                break;
+            case 50:
+                palavra += "2";
+                break;
+            case 51:
+                palavra += "3";
+                break;
+            case 52:
+                palavra += "4";
+                break;
+            case 53:
+                palavra += "5";
+                break;
+            case 54:
+                palavra += "6";
+                break;
+            case 55:
+                palavra += "7";
+                break;
+            case 56:
+                palavra += "8";
+                break;
+            case 57:
+                palavra += "9";
+                break;
+            case 65:
+                palavra += "A";
+                break;
+            case 66:
+                palavra += "B";
+                break;
+            case 67:
+                palavra += "C";
+                break;
+            case 68:
+                palavra += "D";
+                break;
+            case 69:
+                palavra += "E";
+                break;
+            case 70:
+                palavra += "F";
+                break;
+            case 71:
+                palavra += "G";
+                break;
+            case 72:
+                palavra += "H";
+                break;
+            case 73:
+                palavra += "I";
+                break;
+            case 74:
+                palavra += "J";
+                break;
+            case 75:
+                palavra += "K";
+                break;
+            case 76:
+                palavra += "L";
+                break;
+            case 77:
+                palavra += "M";
+                break;
+            case 78:
+                palavra += "N";
+                break;
+            case 79:
+                palavra += "O";
+                break;
+            case 80:
+                palavra += "P";
+                break;
+            case 81:
+                palavra += "Q";
+                break;
+            case 82:
+                palavra += "R";
+                break;
+            case 83:
+                palavra += "S";
+                break;
+            case 84:
+                palavra += "T";
+                break;
+            case 85:
+                palavra += "U";
+                break;
+            case 86:
+                palavra += "V";
+                break;
+            case 87:
+                palavra += "W";
+                break;
+            case 88:
+                palavra += "X";
+                break;
+            case 89:
+                palavra += "Y";
+                break;
+            case 90:
+                palavra += "Z";
+                break;
+            case 97:
+                palavra += "a";
+                break;
+            case 98:
+                palavra += "b";
+                break;
+            case 99:
+                palavra += "c";
+                break;
+            case 100:
+                palavra += "d";
+                break;
+            case 101:
+                palavra += "e";
+                break;
+            case 102:
+                palavra += "f";
+                break;
+            case 103:
+                palavra += "g";
+                break;
+            case 104:
+                palavra += "h";
+                break;
+            case 105:
+                palavra += "i";
+                break;
+            case 106:
+                palavra += "j";
+                break;
+            case 107:
+                palavra += "k";
+                break;
+            case 108:
+                palavra += "l";
+                break;
+            case 109:
+                palavra += "m";
+                break;
+            case 110:
+                palavra += "n";
+                break;
+            case 111:
+                palavra += "o";
+                break;
+            case 112:
+                palavra += "p";
+                break;
+            case 113:
+                palavra += "q";
+                break;
+            case 114:
+                palavra += "r";
+                break;
+            case 115:
+                palavra += "s";
+                break;
+            case 116:
+                palavra += "t";
+                break;
+            case 117:
+                palavra += "u";
+                break;
+            case 118:
+                palavra += "v";
+                break;
+            case 119:
+                palavra += "w";
+                break;
+            case 120:
+                palavra += "x";
+                break;
+            case 121:
+                palavra += "y";
+                break;
+            case 122:
+                palavra += "z";
+                break;
+            default:
+                dadoValido = false;
+                break;
+        }
+        exibeTexto += palavra;
     }
-    mensagem.textContent = conteudo;
-    obj.textContent = conteudo;
+    if (dadoValido) {
+        binary.value = "";
+        text.value = exibeTexto;
+    } else {
+        text.innerHTML = "Informe dados válidos!";
+    }
 }
 
