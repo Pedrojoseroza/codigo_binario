@@ -1,5 +1,5 @@
 html {
-    margin: 3vw 0.5vw 20px 0.5vw;
+    margin: 1vw 0.5vw 20px 0.5vw;
     background-color: #fffad3;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: calc(12px + 0.390625vw);
@@ -37,29 +37,21 @@ body main section {
   align-items: center;
   justify-content: center; 
 }
-body main section textarea.message {
-    width: 30%;
-    height: 10rem;
+body main section textarea {
+     width: 40%;
+     height: 40vh;
     color: #d6496c;
     background-color: #d6dd90;
     padding: 0px 0.5vw 0px 0.5vw;
     margin: 40px 0 40px 30px;
     font-size: larger;
 }
-body main section textarea.solutionBi {
-     width: 30%;
-    height: 10rem;
-    color: #d6496c;
-    background-color: #d6dd90;
-    padding: 0px 0.5vw 0px 0.5vw;
-    margin: 40px 0 40px 30px;
-    font-size: larger;
+.botoes {
+    display: flex;
+    justify-content: space-evenly;
 }
-body main  input.button {
-    text-align: center;
+body main section.botoes  input.button {
     background-color: red;
-    display: block;
-    margin: 0 auto;
     padding: 10px 10px 10px 10px;
     border-radius: 10px;
     
